@@ -1,0 +1,177 @@
+keyword,category,risk_score
+urgent payment,Banking Fraud,0.95
+immediate urgent payment,Banking Fraud,1.0
+customs fee payment,Courier Fraud,0.9
+immediate customs fee payment,Courier Fraud,0.9500000000000001
+bank verification,Banking Fraud,0.95
+immediate bank verification,Banking Fraud,1.0
+confirm banking details,Banking Fraud,0.95
+immediate confirm banking details,Banking Fraud,1.0
+release shipment after payment,Courier Fraud,0.9
+immediate release shipment after payment,Courier Fraud,0.9500000000000001
+payment required to release package,Courier Fraud,0.95
+immediate payment required to release package,Courier Fraud,1.0
+wire transfer details,Banking Fraud,0.85
+immediate wire transfer details,Banking Fraud,0.9
+update bank routing,Banking Fraud,0.95
+immediate update bank routing,Banking Fraud,1.0
+shipment,Logistics Fraud,0.1
+package,Logistics Fraud,0.1
+parcel,Courier Fraud,0.1
+delivery,Logistics Fraud,0.1
+tracking,Logistics Fraud,0.1
+courier,Courier Fraud,0.1
+dispatch,Logistics Fraud,0.1
+logistics,Logistics Fraud,0.1
+hub,Logistics Fraud,0.1
+warehouse,Logistics Fraud,0.1
+reroute delivery gate code 3000,Logistics Fraud,0.8
+reroute delivery gate code 3001,Logistics Fraud,0.8
+reroute delivery gate code 3002,Logistics Fraud,0.8
+reroute delivery gate code 3003,Logistics Fraud,0.8
+reroute delivery gate code 3004,Logistics Fraud,0.8
+reroute delivery gate code 3005,Logistics Fraud,0.8
+reroute delivery gate code 3006,Logistics Fraud,0.8
+reroute delivery gate code 3007,Logistics Fraud,0.8
+reroute delivery gate code 3008,Logistics Fraud,0.8
+reroute delivery gate code 3009,Logistics Fraud,0.8
+reroute delivery gate code 3010,Logistics Fraud,0.8
+reroute delivery gate code 3011,Logistics Fraud,0.8
+reroute delivery gate code 3012,Logistics Fraud,0.8
+reroute delivery gate code 3013,Logistics Fraud,0.8
+reroute delivery gate code 3014,Logistics Fraud,0.8
+reroute delivery gate code 3015,Logistics Fraud,0.8
+reroute delivery gate code 3016,Logistics Fraud,0.8
+reroute delivery gate code 3017,Logistics Fraud,0.8
+reroute delivery gate code 3018,Logistics Fraud,0.8
+reroute delivery gate code 3019,Logistics Fraud,0.8
+reroute delivery gate code 3020,Logistics Fraud,0.8
+reroute delivery gate code 3021,Logistics Fraud,0.8
+reroute delivery gate code 3022,Logistics Fraud,0.8
+reroute delivery gate code 3023,Logistics Fraud,0.8
+reroute delivery gate code 3024,Logistics Fraud,0.8
+reroute delivery gate code 3025,Logistics Fraud,0.8
+reroute delivery gate code 3026,Logistics Fraud,0.8
+reroute delivery gate code 3027,Logistics Fraud,0.8
+reroute delivery gate code 3028,Logistics Fraud,0.8
+reroute delivery gate code 3029,Logistics Fraud,0.8
+reroute delivery gate code 3030,Logistics Fraud,0.8
+reroute delivery gate code 3031,Logistics Fraud,0.8
+reroute delivery gate code 3032,Logistics Fraud,0.8
+reroute delivery gate code 3033,Logistics Fraud,0.8
+reroute delivery gate code 3034,Logistics Fraud,0.8
+reroute delivery gate code 3035,Logistics Fraud,0.8
+reroute delivery gate code 3036,Logistics Fraud,0.8
+reroute delivery gate code 3037,Logistics Fraud,0.8
+reroute delivery gate code 3038,Logistics Fraud,0.8
+reroute delivery gate code 3039,Logistics Fraud,0.8
+reroute delivery gate code 3040,Logistics Fraud,0.8
+reroute delivery gate code 3041,Logistics Fraud,0.8
+reroute delivery gate code 3042,Logistics Fraud,0.8
+reroute delivery gate code 3043,Logistics Fraud,0.8
+reroute delivery gate code 3044,Logistics Fraud,0.8
+reroute delivery gate code 3045,Logistics Fraud,0.8
+reroute delivery gate code 3046,Logistics Fraud,0.8
+reroute delivery gate code 3047,Logistics Fraud,0.8
+reroute delivery gate code 3048,Logistics Fraud,0.8
+reroute delivery gate code 3049,Logistics Fraud,0.8
+reroute delivery gate code 3050,Logistics Fraud,0.8
+reroute delivery gate code 3051,Logistics Fraud,0.8
+reroute delivery gate code 3052,Logistics Fraud,0.8
+reroute delivery gate code 3053,Logistics Fraud,0.8
+reroute delivery gate code 3054,Logistics Fraud,0.8
+reroute delivery gate code 3055,Logistics Fraud,0.8
+reroute delivery gate code 3056,Logistics Fraud,0.8
+reroute delivery gate code 3057,Logistics Fraud,0.8
+reroute delivery gate code 3058,Logistics Fraud,0.8
+reroute delivery gate code 3059,Logistics Fraud,0.8
+reroute delivery gate code 3060,Logistics Fraud,0.8
+reroute delivery gate code 3061,Logistics Fraud,0.8
+reroute delivery gate code 3062,Logistics Fraud,0.8
+reroute delivery gate code 3063,Logistics Fraud,0.8
+reroute delivery gate code 3064,Logistics Fraud,0.8
+reroute delivery gate code 3065,Logistics Fraud,0.8
+reroute delivery gate code 3066,Logistics Fraud,0.8
+reroute delivery gate code 3067,Logistics Fraud,0.8
+reroute delivery gate code 3068,Logistics Fraud,0.8
+reroute delivery gate code 3069,Logistics Fraud,0.8
+reroute delivery gate code 3070,Logistics Fraud,0.8
+reroute delivery gate code 3071,Logistics Fraud,0.8
+reroute delivery gate code 3072,Logistics Fraud,0.8
+reroute delivery gate code 3073,Logistics Fraud,0.8
+reroute delivery gate code 3074,Logistics Fraud,0.8
+reroute delivery gate code 3075,Logistics Fraud,0.8
+reroute delivery gate code 3076,Logistics Fraud,0.8
+reroute delivery gate code 3077,Logistics Fraud,0.8
+reroute delivery gate code 3078,Logistics Fraud,0.8
+reroute delivery gate code 3079,Logistics Fraud,0.8
+reroute delivery gate code 3080,Logistics Fraud,0.8
+reroute delivery gate code 3081,Logistics Fraud,0.8
+reroute delivery gate code 3082,Logistics Fraud,0.8
+reroute delivery gate code 3083,Logistics Fraud,0.8
+reroute delivery gate code 3084,Logistics Fraud,0.8
+reroute delivery gate code 3085,Logistics Fraud,0.8
+reroute delivery gate code 3086,Logistics Fraud,0.8
+reroute delivery gate code 3087,Logistics Fraud,0.8
+reroute delivery gate code 3088,Logistics Fraud,0.8
+reroute delivery gate code 3089,Logistics Fraud,0.8
+reroute delivery gate code 3090,Logistics Fraud,0.8
+reroute delivery gate code 3091,Logistics Fraud,0.8
+reroute delivery gate code 3092,Logistics Fraud,0.8
+reroute delivery gate code 3093,Logistics Fraud,0.8
+reroute delivery gate code 3094,Logistics Fraud,0.8
+reroute delivery gate code 3095,Logistics Fraud,0.8
+reroute delivery gate code 3096,Logistics Fraud,0.8
+reroute delivery gate code 3097,Logistics Fraud,0.8
+reroute delivery gate code 3098,Logistics Fraud,0.8
+reroute delivery gate code 3099,Logistics Fraud,0.8
+reroute delivery gate code 3100,Logistics Fraud,0.8
+reroute delivery gate code 3101,Logistics Fraud,0.8
+reroute delivery gate code 3102,Logistics Fraud,0.8
+reroute delivery gate code 3103,Logistics Fraud,0.8
+reroute delivery gate code 3104,Logistics Fraud,0.8
+reroute delivery gate code 3105,Logistics Fraud,0.8
+reroute delivery gate code 3106,Logistics Fraud,0.8
+reroute delivery gate code 3107,Logistics Fraud,0.8
+reroute delivery gate code 3108,Logistics Fraud,0.8
+reroute delivery gate code 3109,Logistics Fraud,0.8
+reroute delivery gate code 3110,Logistics Fraud,0.8
+reroute delivery gate code 3111,Logistics Fraud,0.8
+reroute delivery gate code 3112,Logistics Fraud,0.8
+reroute delivery gate code 3113,Logistics Fraud,0.8
+reroute delivery gate code 3114,Logistics Fraud,0.8
+reroute delivery gate code 3115,Logistics Fraud,0.8
+reroute delivery gate code 3116,Logistics Fraud,0.8
+reroute delivery gate code 3117,Logistics Fraud,0.8
+reroute delivery gate code 3118,Logistics Fraud,0.8
+reroute delivery gate code 3119,Logistics Fraud,0.8
+reroute delivery gate code 3120,Logistics Fraud,0.8
+reroute delivery gate code 3121,Logistics Fraud,0.8
+reroute delivery gate code 3122,Logistics Fraud,0.8
+reroute delivery gate code 3123,Logistics Fraud,0.8
+reroute delivery gate code 3124,Logistics Fraud,0.8
+reroute delivery gate code 3125,Logistics Fraud,0.8
+reroute delivery gate code 3126,Logistics Fraud,0.8
+reroute delivery gate code 3127,Logistics Fraud,0.8
+reroute delivery gate code 3128,Logistics Fraud,0.8
+reroute delivery gate code 3129,Logistics Fraud,0.8
+reroute delivery gate code 3130,Logistics Fraud,0.8
+reroute delivery gate code 3131,Logistics Fraud,0.8
+reroute delivery gate code 3132,Logistics Fraud,0.8
+reroute delivery gate code 3133,Logistics Fraud,0.8
+reroute delivery gate code 3134,Logistics Fraud,0.8
+reroute delivery gate code 3135,Logistics Fraud,0.8
+reroute delivery gate code 3136,Logistics Fraud,0.8
+reroute delivery gate code 3137,Logistics Fraud,0.8
+reroute delivery gate code 3138,Logistics Fraud,0.8
+reroute delivery gate code 3139,Logistics Fraud,0.8
+reroute delivery gate code 3140,Logistics Fraud,0.8
+reroute delivery gate code 3141,Logistics Fraud,0.8
+reroute delivery gate code 3142,Logistics Fraud,0.8
+reroute delivery gate code 3143,Logistics Fraud,0.8
+reroute delivery gate code 3144,Logistics Fraud,0.8
+reroute delivery gate code 3145,Logistics Fraud,0.8
+reroute delivery gate code 3146,Logistics Fraud,0.8
+reroute delivery gate code 3147,Logistics Fraud,0.8
+reroute delivery gate code 3148,Logistics Fraud,0.8
+reroute delivery gate code 3149,Logistics Fraud,0.8

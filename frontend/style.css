@@ -1,0 +1,156 @@
+/* Clean corporate/hackathon styling for the AI Fraud Detection Portal */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f3f7;
+    color: #333333;
+    min-height: 100vh;
+}
+
+/* Header Banner */
+.header-banner {
+    background: linear-gradient(135deg, #0040a0 0%, #002560 100%);
+    box-shadow: 0 4px 15px rgba(0, 64, 160, 0.15);
+}
+
+.header-banner h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    padding-top: 1.5rem !important;
+}
+
+/* Form controls styling */
+.form-label {
+    font-size: 0.9rem;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #6c757d;
+}
+
+.form-control:focus, .form-control:active {
+    box-shadow: 0 0 0 3px rgba(0, 64, 160, 0.15) !important;
+    border-color: #0040a0 !important;
+}
+
+/* Primary Button Styling */
+.btn-primary {
+    background-color: #0040a0;
+    border-color: #0040a0;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #002d72;
+    border-color: #002d72;
+    box-shadow: 0 4px 12px rgba(0, 64, 160, 0.25) !important;
+}
+
+/* Results Content */
+#results-content {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classification Badges */
+.badge-safe {
+    background-color: rgba(25, 135, 84, 0.15);
+    color: #198754;
+    border: 1px solid rgba(25, 135, 84, 0.3);
+}
+
+.badge-suspicious {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #b58100;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.badge-fraud {
+    background-color: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Custom shadow inset for metric containers */
+.shadow-sm-inset {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+    border: 1px solid #e9ecef;
+}
+
+/* Keyword Pills */
+.keyword-pill {
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* List Items with Custom Icons */
+.reason-item {
+    font-size: 0.95rem;
+    padding: 0.35rem 0;
+    display: flex;
+    align-items: center;
+    color: #495057;
+}
+
+.reason-item i {
+    color: #dc3545;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+.reason-item.safe-marker i {
+    color: #198754;
+}
+
+.rec-item {
+    font-size: 0.95rem;
+    padding: 0.35rem 0;
+    display: flex;
+    align-items: center;
+    color: #495057;
+}
+
+.rec-item i {
+    color: #0040a0;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Typography & Layout tweaks */
+.tracking-wider {
+    letter-spacing: 0.05em;
+}

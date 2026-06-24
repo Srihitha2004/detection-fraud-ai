@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Cargo Theft Fraud Detection Platform</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Background glowing aesthetics -->
+    <div class="glowing-bg">
+        <div class="glow-orb-1"></div>
+        <div class="glow-orb-2"></div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container-div" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;"></div>
+
+    <!-- MAIN APP STRUCTURE -->
+    <div class="app-wrapper">
+
+        <!-- 1. SIDEBAR NAVIGATION -->
+        <nav id="sidebar-wrapper" class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>SENTINEL CARGO</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a class="sidebar-link active" data-view="dashboard-view">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="copilot-view">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Copilot</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="alerts-view">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Alert Center</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="shipments-view">
+                        <i class="fa-solid fa-truck"></i>
+                        <span>Shipments</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="vendors-view">
+                        <i class="fa-solid fa-handshake"></i>
+                        <span>Vendors</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="comms-view">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <span>Communications</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="analytics-view">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" data-view="history-view">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Audit Log</span>
+                    </a>
+                </li>
+                <li class="sidebar-item admin-only">
+                    <a class="sidebar-link" data-view="admin-view">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Admin Portal</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-outline-danger w-100">
+                    <i class="fa-solid fa-right-from-bracket me-2"></i>Logout
+                </button>
+            </div>
+        </nav>
+
+        <!-- MAIN WINDOW WRAPPER -->
+        <div class="main-content">
+
+            <!-- 2. NAVBAR -->
+            <header id="navbar-wrapper" class="top-navbar">
+                <h4 class="mb-0 text-white fw-semibold">Fraud Intelligence Center</h4>
+                
+                <div class="top-navbar-right">
+                    <div class="user-badge">
+                        <i class="fa-solid fa-user-shield text-accent-purple"></i>
+                        <span id="display-username">Username</span>
+                        <span class="badge bg-secondary" id="display-role" style="font-size: 10px;">Role</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 3. PAGE MODULES (SPA VIEWS) -->
+            <main class="content-body">
+
+                <!-- MODULE 1: LOGIN / REGISTRATION (AUTH VIEW) -->
+                <div id="login-view" class="view-screen auth-container d-none">
+                    <div class="auth-card">
+                        <div class="text-center mb-4">
+                            <i class="fa-solid fa-shield-halved fa-3x text-accent-purple mb-3"></i>
+                            <h3 class="text-white fw-bold">Sentinel Cargo</h3>
+                            <p class="text-muted">Enterprise Fraud Prevention</p>
+                        </div>
+                        
+                        <ul class="nav nav-tabs nav-fill mb-4 border-secondary" id="authTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active text-white" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-panel" type="button">Login</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link text-white" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-panel" type="button">Register</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="authTabContent">
+                            <!-- Login Panel -->
+                            <div class="tab-pane fade show active" id="login-panel">
+                                <form id="login-form">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Username</label>
+                                        <input type="text" class="form-control glass-input" id="login-user" required placeholder="admin">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted">Password</label>
+                                        <input type="password" class="form-control glass-input" id="login-pass" required placeholder="admin123">
+                                    </div>
+                                    <button type="submit" class="btn btn-gradient w-100 py-2">Sign In</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Register Panel -->
+                            <div class="tab-pane fade" id="register-panel">
+                                <form id="register-form">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Username</label>
+                                        <input type="text" class="form-control glass-input" id="reg-user" required placeholder="Enter username">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Password</label>
+                                        <input type="password" class="form-control glass-input" id="reg-pass" required placeholder="Enter password">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted">Role</label>
+                                        <select class="form-select glass-input glass-select" id="reg-role">
+                                            <option value="Dispatcher">Dispatcher</option>
+                                            <option value="Investigator">Investigator</option>
+                                            <option value="Admin">Admin</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-gradient w-100 py-2">Create Account</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 2: DASHBOARD VIEW -->
+                <div id="dashboard-view" class="view-screen">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="glass-card metric-card">
+                                <div>
+                                    <h6 class="text-muted mb-1">Total Shipments</h6>
+                                    <h3 class="mb-0 text-white" id="dash-shipments">0</h3>
+                                </div>
+                                <div class="metric-icon icon-purple">
+                                    <i class="fa-solid fa-truck-moving"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="glass-card metric-card">
+                                <div>
+                                    <h6 class="text-muted mb-1">Fraud Alerts</h6>
+                                    <h3 class="mb-0 text-white" id="dash-alerts">0</h3>
+                                </div>
+                                <div class="metric-icon icon-blue">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="glass-card metric-card">
+                                <div>
+                                    <h6 class="text-muted mb-1">Open Queue</h6>
+                                    <h3 class="mb-0 text-white text-warning" id="dash-open-alerts">0</h3>
+                                </div>
+                                <div class="metric-icon icon-amber">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="glass-card metric-card">
+                                <div>
+                                    <h6 class="text-muted mb-1">Avg Trust score</h6>
+                                    <h3 class="mb-0 text-white" id="dash-avg-trust">100%</h3>
+                                </div>
+                                <div class="metric-icon icon-teal">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Investigation queue -->
+                        <div class="col-lg-8">
+                            <div class="glass-card p-4 h-100">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5 class="text-white mb-0">High-Risk Investigation Queue</h5>
+                                    <button class="btn btn-sm btn-outline-secondary" onclick="exportDataReport('dash-queue-table')">Export CSV</button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="custom-table" id="dash-queue-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Shipment ID</th>
+                                                <th>Route</th>
+                                                <th>Valuation</th>
+                                                <th>Verdict</th>
+                                                <th>Risk Score</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="dash-queue-tbody">
+                                            <tr>
+                                                <td colspan="6" class="text-center text-muted py-4">Loading queue...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-time aggregated speedometer gauge -->
+                        <div class="col-lg-4">
+                            <div class="glass-card p-4 h-100 text-center">
+                                <h5 class="text-white mb-4">Logistics Threat Level</h5>
+                                <div class="speedometer-container">
+                                    <div class="speedometer-track"></div>
+                                    <div class="speedometer-fill" style="transform: rotate(180deg); border-color: var(--risk-critical) var(--risk-critical) transparent transparent;"></div>
+                                    <div class="speedometer-needle" style="transform: rotate(50deg);"></div>
+                                    <div class="speedometer-needle-hub"></div>
+                                </div>
+                                <div class="speedometer-value text-danger mt-3">HIGH RISK</div>
+                                <p class="text-muted mt-2" style="font-size: 13px;">Weighted aggregate score computed from active shipments, vector communication audits, and carrier histories.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 3: AI COPILOT / AGENTIC AI DETECTOR -->
+                <div id="copilot-view" class="view-screen d-none">
+                    <div class="row g-4">
+                        <!-- Form input for manual testing -->
+                        <div class="col-md-5">
+                            <div class="glass-card p-4">
+                                <h5 class="text-white mb-4"><i class="fa-solid fa-clipboard-check me-2 text-accent-purple"></i>New Shipment Risk Audit</h5>
+                                <form id="copilot-form">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Shipment ID</label>
+                                            <input type="text" class="form-control glass-input" id="cop-shp-id" required placeholder="SHP-9921">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Vendor ID</label>
+                                            <select class="form-select glass-input glass-select" id="cop-vendor">
+                                                <option value="VND-100">VND-100 (Atlas Cargo - 98.5%)</option>
+                                                <option value="VND-104">VND-104 (Apex Carrier - 45.0%)</option>
+                                                <option value="VND-118">VND-118 (Summit Logistics - 82.3%)</option>
+                                                <option value="VND-120">VND-120 (United Cargo - 99.1%)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Carrier Truck ID</label>
+                                            <input type="text" class="form-control glass-input" id="cop-carrier" required placeholder="CAR-771">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Route Code</label>
+                                            <input type="text" class="form-control glass-input" id="cop-route" required placeholder="I-80 E">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Origin Hub</label>
+                                            <input type="text" class="form-control glass-input" id="cop-origin" required placeholder="Los Angeles, CA">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Destination Terminal</label>
+                                            <input type="text" class="form-control glass-input" id="cop-dest" required placeholder="Chicago, IL">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Cargo Weight (kg)</label>
+                                            <input type="number" step="0.1" class="form-control glass-input" id="cop-weight" required placeholder="12000">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted">Valuation (USD)</label>
+                                            <input type="number" step="0.01" class="form-control glass-input" id="cop-cost" required placeholder="45000">
+                                        </div>
+                                        <hr class="border-secondary mt-4">
+                                        <h6 class="text-accent-purple mb-0 mt-2">Associate Broker Communication (Email/SMS)</h6>
+                                        <div class="col-12">
+                                            <label class="form-label text-muted">Sender Address</label>
+                                            <input type="text" class="form-control glass-input" id="cop-email-sender" placeholder="shipper-support@gmail-cargo.com">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label text-muted">Message Content</label>
+                                            <textarea class="form-control glass-input" id="cop-email-text" rows="3" placeholder="URGENT: Change billing details and reroute delivery dock..."></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-gradient w-100 py-2 mt-4">Execute Agentic Risk Audit</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Copilot execution logs & Dossier outputs -->
+                        <div class="col-md-7">
+                            <div class="glass-card p-4 mb-4">
+                                <h5 class="text-white mb-3"><i class="fa-solid fa-terminal me-2 text-accent-teal"></i>Agentic AI Thought Logs</h5>
+                                <div id="copilot-console" class="bg-black p-3 rounded font-monospace" style="height: 180px; overflow-y: auto; font-size:12px; border: 1px solid rgba(255,255,255,0.1);">
+                                    <div class="text-muted">[System]: Engine ready. Awaiting risk audit initiation.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-card p-4">
+                                <h5 class="text-white mb-3"><i class="fa-solid fa-file-invoice-dollar me-2 text-warning"></i>Explainability & Recommendations Dossier</h5>
+                                <div id="copilot-dossier-body" style="font-size:14px; max-height:280px; overflow-y:auto; line-height: 1.6;">
+                                    <em>Dossier remains blank until simulation run completes.</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 4: ALERT CENTER -->
+                <div id="alerts-view" class="view-screen d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="text-white mb-0">Fraud Alerts Center</h4>
+                    </div>
+                    <div class="row" id="alerts-container">
+                        <!-- Loaded via JS -->
+                    </div>
+                </div>
+
+                <!-- MODULE 5: SHIPMENTS LIST -->
+                <div id="shipments-view" class="view-screen d-none">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="text-white mb-0">Active Shipment Registry</h5>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="exportDataReport('shipments-list-table')">Export CSV</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table" id="shipments-list-table">
+                                <thead>
+                                    <tr>
+                                        <th>Shipment ID</th>
+                                        <th>Vendor ID</th>
+                                        <th>Carrier</th>
+                                        <th>Route</th>
+                                        <th>Weight (kg)</th>
+                                        <th>Valuation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>SHP-1001</strong></td>
+                                        <td>VND-100</td>
+                                        <td>CAR-982</td>
+                                        <td>Los Angeles &rarr; Chicago</td>
+                                        <td>15,200.0</td>
+                                        <td>$45,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SHP-1002</strong></td>
+                                        <td>VND-101</td>
+                                        <td>CAR-114</td>
+                                        <td>Miami &rarr; New York</td>
+                                        <td>18,450.0</td>
+                                        <td>$62,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SHP-1003</strong></td>
+                                        <td>VND-104</td>
+                                        <td>CAR-504</td>
+                                        <td>Houston &rarr; Phoenix</td>
+                                        <td>8,500.0</td>
+                                        <td>$95,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SHP-1004</strong></td>
+                                        <td>VND-102</td>
+                                        <td>CAR-098</td>
+                                        <td>Seattle &rarr; Denver</td>
+                                        <td>12,000.0</td>
+                                        <td>$31,000.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 6: VENDORS MONITORING -->
+                <div id="vendors-view" class="view-screen d-none">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="text-white mb-0">Vendor Trust registries</h5>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="exportDataReport('vendors-list-table')">Export CSV</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table" id="vendors-list-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vendor ID</th>
+                                        <th>Company Name</th>
+                                        <th>Reported Incidents</th>
+                                        <th>Trust Index</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vendor-list-tbody">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 7: COMMUNICATIONS ANALYSIS PANEL -->
+                <div id="comms-view" class="view-screen d-none">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <div class="glass-card p-4">
+                                <h5 class="text-white mb-4"><i class="fa-solid fa-vial me-2 text-accent-purple"></i>Message Fraud Detector</h5>
+                                <form id="msg-test-form">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Sender Profile</label>
+                                        <input type="text" class="form-control glass-input" id="msg-sender" required placeholder="shipper-support@gmail-cargo.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Receiver Profile</label>
+                                        <input type="text" class="form-control glass-input" id="msg-receiver" required placeholder="ops@controlcenter.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Channel</label>
+                                        <select class="form-select glass-input glass-select" id="msg-type">
+                                            <option value="Email">Email</option>
+                                            <option value="SMS">SMS</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted">Message Text</label>
+                                        <textarea class="form-control glass-input" id="msg-text" required rows="4" placeholder="URGENT: Warehouse locked, reroute delivery to alternative yard immediately..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-gradient w-100 py-2">Test Message Content</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="glass-card p-4 h-100">
+                                <h5 class="text-white mb-4">Fraud Evaluation Output</h5>
+                                <div id="msg-loader" class="text-center p-5 d-none">
+                                    <div class="spinner-border text-primary" role="status"></div>
+                                    <p class="text-muted mt-2">Agent running NLP diagnostics...</p>
+                                </div>
+                                <div id="msg-results" class="p-3 border border-secondary rounded bg-dark d-none">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="text-white mb-0">Agent Classification:</h6>
+                                        <span id="msg-res-label" class="badge">SAFE</span>
+                                    </div>
+                                    <h2 id="msg-res-prob" class="text-white mb-4 fw-bold">0.0%</h2>
+                                    <h6 class="text-white mb-2">Agent Thoughts / Rationale:</h6>
+                                    <p id="msg-res-thoughts" class="text-muted font-monospace" style="font-size: 13px;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 8: ANALYTICS DASHBOARD -->
+                <div id="analytics-view" class="view-screen d-none">
+                    <div class="row g-4">
+                        <div class="col-md-8">
+                            <div class="glass-card p-4">
+                                <h5 class="text-white mb-4">Fraud Alerts Frequency Trend</h5>
+                                <canvas id="chart-trends" style="height:250px;"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="glass-card p-4">
+                                <h5 class="text-white mb-4">Risk Severity Allocation</h5>
+                                <canvas id="chart-distribution" style="height:250px;"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="glass-card p-4">
+                                <h5 class="text-white mb-4">Machine Learning Classifier Evaluation</h5>
+                                <canvas id="chart-models" style="height:280px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 9: AUDIT LOG HISTORY -->
+                <div id="history-view" class="view-screen d-none">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="text-white mb-0">System Audit Logs</h5>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="exportDataReport('history-list-table')">Export CSV</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table" id="history-list-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Shipment ID</th>
+                                        <th>Route</th>
+                                        <th>Valuation</th>
+                                        <th>Risk Verdict</th>
+                                        <th>Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history-tbody">
+                                    <!-- Dynamic elements from JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE 10: ADMIN PANEL -->
+                <div id="admin-view" class="view-screen d-none">
+                    <div class="glass-card p-4">
+                        <h5 class="text-white mb-4"><i class="fa-solid fa-sliders text-accent-purple me-2"></i>Admin Core Platform Management</h5>
+                        <p class="text-muted">You are logged in with **Admin** access privileges. You can trigger data generation pipelines and train classifiers.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="p-4 border border-secondary rounded bg-dark">
+                                    <h6 class="text-white mb-2">Classifier Pipeline Trigger</h6>
+                                    <p class="text-muted" style="font-size: 13px;">Generate 1,500 new synthetic data records, run feature scaling, compile Random Forest, XGBoost, LightGBM, Logistic Regression, and SVM classifiers, score metrics, select the best model, and serialize it to the models directory.</p>
+                                    <button class="btn btn-primary" id="btn-train-pipeline">Run Model Training Pipeline</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom SPA JavaScript Controller -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

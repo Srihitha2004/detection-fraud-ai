@@ -1,0 +1,169 @@
+keyword,category,risk_score
+share otp,OTP Fraud,0.99
+urgent share otp,OTP Fraud,1.0
+please share otp,OTP Fraud,0.99
+claim reward,Reward Scam,0.9
+urgent claim reward,Reward Scam,0.9500000000000001
+please claim reward,Reward Scam,0.9
+claim prize,Lottery Scam,0.9
+urgent claim prize,Lottery Scam,0.9500000000000001
+please claim prize,Lottery Scam,0.9
+lottery winner,Lottery Scam,0.95
+urgent lottery winner,Lottery Scam,1.0
+please lottery winner,Lottery Scam,0.95
+provide security code,OTP Fraud,0.95
+urgent provide security code,OTP Fraud,1.0
+please provide security code,OTP Fraud,0.95
+confirm pin number,OTP Fraud,0.9
+urgent confirm pin number,OTP Fraud,0.9500000000000001
+please confirm pin number,OTP Fraud,0.9
+promo sweepstakes ticket number 1000,Lottery Scam,0.8
+promo sweepstakes ticket number 1001,Lottery Scam,0.8
+promo sweepstakes ticket number 1002,Lottery Scam,0.8
+promo sweepstakes ticket number 1003,Lottery Scam,0.8
+promo sweepstakes ticket number 1004,Lottery Scam,0.8
+promo sweepstakes ticket number 1005,Lottery Scam,0.8
+promo sweepstakes ticket number 1006,Lottery Scam,0.8
+promo sweepstakes ticket number 1007,Lottery Scam,0.8
+promo sweepstakes ticket number 1008,Lottery Scam,0.8
+promo sweepstakes ticket number 1009,Lottery Scam,0.8
+promo sweepstakes ticket number 1010,Lottery Scam,0.8
+promo sweepstakes ticket number 1011,Lottery Scam,0.8
+promo sweepstakes ticket number 1012,Lottery Scam,0.8
+promo sweepstakes ticket number 1013,Lottery Scam,0.8
+promo sweepstakes ticket number 1014,Lottery Scam,0.8
+promo sweepstakes ticket number 1015,Lottery Scam,0.8
+promo sweepstakes ticket number 1016,Lottery Scam,0.8
+promo sweepstakes ticket number 1017,Lottery Scam,0.8
+promo sweepstakes ticket number 1018,Lottery Scam,0.8
+promo sweepstakes ticket number 1019,Lottery Scam,0.8
+promo sweepstakes ticket number 1020,Lottery Scam,0.8
+promo sweepstakes ticket number 1021,Lottery Scam,0.8
+promo sweepstakes ticket number 1022,Lottery Scam,0.8
+promo sweepstakes ticket number 1023,Lottery Scam,0.8
+promo sweepstakes ticket number 1024,Lottery Scam,0.8
+promo sweepstakes ticket number 1025,Lottery Scam,0.8
+promo sweepstakes ticket number 1026,Lottery Scam,0.8
+promo sweepstakes ticket number 1027,Lottery Scam,0.8
+promo sweepstakes ticket number 1028,Lottery Scam,0.8
+promo sweepstakes ticket number 1029,Lottery Scam,0.8
+promo sweepstakes ticket number 1030,Lottery Scam,0.8
+promo sweepstakes ticket number 1031,Lottery Scam,0.8
+promo sweepstakes ticket number 1032,Lottery Scam,0.8
+promo sweepstakes ticket number 1033,Lottery Scam,0.8
+promo sweepstakes ticket number 1034,Lottery Scam,0.8
+promo sweepstakes ticket number 1035,Lottery Scam,0.8
+promo sweepstakes ticket number 1036,Lottery Scam,0.8
+promo sweepstakes ticket number 1037,Lottery Scam,0.8
+promo sweepstakes ticket number 1038,Lottery Scam,0.8
+promo sweepstakes ticket number 1039,Lottery Scam,0.8
+promo sweepstakes ticket number 1040,Lottery Scam,0.8
+promo sweepstakes ticket number 1041,Lottery Scam,0.8
+promo sweepstakes ticket number 1042,Lottery Scam,0.8
+promo sweepstakes ticket number 1043,Lottery Scam,0.8
+promo sweepstakes ticket number 1044,Lottery Scam,0.8
+promo sweepstakes ticket number 1045,Lottery Scam,0.8
+promo sweepstakes ticket number 1046,Lottery Scam,0.8
+promo sweepstakes ticket number 1047,Lottery Scam,0.8
+promo sweepstakes ticket number 1048,Lottery Scam,0.8
+promo sweepstakes ticket number 1049,Lottery Scam,0.8
+promo sweepstakes ticket number 1050,Lottery Scam,0.8
+promo sweepstakes ticket number 1051,Lottery Scam,0.8
+promo sweepstakes ticket number 1052,Lottery Scam,0.8
+promo sweepstakes ticket number 1053,Lottery Scam,0.8
+promo sweepstakes ticket number 1054,Lottery Scam,0.8
+promo sweepstakes ticket number 1055,Lottery Scam,0.8
+promo sweepstakes ticket number 1056,Lottery Scam,0.8
+promo sweepstakes ticket number 1057,Lottery Scam,0.8
+promo sweepstakes ticket number 1058,Lottery Scam,0.8
+promo sweepstakes ticket number 1059,Lottery Scam,0.8
+promo sweepstakes ticket number 1060,Lottery Scam,0.8
+promo sweepstakes ticket number 1061,Lottery Scam,0.8
+promo sweepstakes ticket number 1062,Lottery Scam,0.8
+promo sweepstakes ticket number 1063,Lottery Scam,0.8
+promo sweepstakes ticket number 1064,Lottery Scam,0.8
+promo sweepstakes ticket number 1065,Lottery Scam,0.8
+promo sweepstakes ticket number 1066,Lottery Scam,0.8
+promo sweepstakes ticket number 1067,Lottery Scam,0.8
+promo sweepstakes ticket number 1068,Lottery Scam,0.8
+promo sweepstakes ticket number 1069,Lottery Scam,0.8
+promo sweepstakes ticket number 1070,Lottery Scam,0.8
+promo sweepstakes ticket number 1071,Lottery Scam,0.8
+promo sweepstakes ticket number 1072,Lottery Scam,0.8
+promo sweepstakes ticket number 1073,Lottery Scam,0.8
+promo sweepstakes ticket number 1074,Lottery Scam,0.8
+promo sweepstakes ticket number 1075,Lottery Scam,0.8
+promo sweepstakes ticket number 1076,Lottery Scam,0.8
+promo sweepstakes ticket number 1077,Lottery Scam,0.8
+promo sweepstakes ticket number 1078,Lottery Scam,0.8
+promo sweepstakes ticket number 1079,Lottery Scam,0.8
+promo sweepstakes ticket number 1080,Lottery Scam,0.8
+promo sweepstakes ticket number 1081,Lottery Scam,0.8
+promo sweepstakes ticket number 1082,Lottery Scam,0.8
+promo sweepstakes ticket number 1083,Lottery Scam,0.8
+promo sweepstakes ticket number 1084,Lottery Scam,0.8
+promo sweepstakes ticket number 1085,Lottery Scam,0.8
+promo sweepstakes ticket number 1086,Lottery Scam,0.8
+promo sweepstakes ticket number 1087,Lottery Scam,0.8
+promo sweepstakes ticket number 1088,Lottery Scam,0.8
+promo sweepstakes ticket number 1089,Lottery Scam,0.8
+promo sweepstakes ticket number 1090,Lottery Scam,0.8
+promo sweepstakes ticket number 1091,Lottery Scam,0.8
+promo sweepstakes ticket number 1092,Lottery Scam,0.8
+promo sweepstakes ticket number 1093,Lottery Scam,0.8
+promo sweepstakes ticket number 1094,Lottery Scam,0.8
+promo sweepstakes ticket number 1095,Lottery Scam,0.8
+promo sweepstakes ticket number 1096,Lottery Scam,0.8
+promo sweepstakes ticket number 1097,Lottery Scam,0.8
+promo sweepstakes ticket number 1098,Lottery Scam,0.8
+promo sweepstakes ticket number 1099,Lottery Scam,0.8
+promo sweepstakes ticket number 1100,Lottery Scam,0.8
+promo sweepstakes ticket number 1101,Lottery Scam,0.8
+promo sweepstakes ticket number 1102,Lottery Scam,0.8
+promo sweepstakes ticket number 1103,Lottery Scam,0.8
+promo sweepstakes ticket number 1104,Lottery Scam,0.8
+promo sweepstakes ticket number 1105,Lottery Scam,0.8
+promo sweepstakes ticket number 1106,Lottery Scam,0.8
+promo sweepstakes ticket number 1107,Lottery Scam,0.8
+promo sweepstakes ticket number 1108,Lottery Scam,0.8
+promo sweepstakes ticket number 1109,Lottery Scam,0.8
+promo sweepstakes ticket number 1110,Lottery Scam,0.8
+promo sweepstakes ticket number 1111,Lottery Scam,0.8
+promo sweepstakes ticket number 1112,Lottery Scam,0.8
+promo sweepstakes ticket number 1113,Lottery Scam,0.8
+promo sweepstakes ticket number 1114,Lottery Scam,0.8
+promo sweepstakes ticket number 1115,Lottery Scam,0.8
+promo sweepstakes ticket number 1116,Lottery Scam,0.8
+promo sweepstakes ticket number 1117,Lottery Scam,0.8
+promo sweepstakes ticket number 1118,Lottery Scam,0.8
+promo sweepstakes ticket number 1119,Lottery Scam,0.8
+promo sweepstakes ticket number 1120,Lottery Scam,0.8
+promo sweepstakes ticket number 1121,Lottery Scam,0.8
+promo sweepstakes ticket number 1122,Lottery Scam,0.8
+promo sweepstakes ticket number 1123,Lottery Scam,0.8
+promo sweepstakes ticket number 1124,Lottery Scam,0.8
+promo sweepstakes ticket number 1125,Lottery Scam,0.8
+promo sweepstakes ticket number 1126,Lottery Scam,0.8
+promo sweepstakes ticket number 1127,Lottery Scam,0.8
+promo sweepstakes ticket number 1128,Lottery Scam,0.8
+promo sweepstakes ticket number 1129,Lottery Scam,0.8
+promo sweepstakes ticket number 1130,Lottery Scam,0.8
+promo sweepstakes ticket number 1131,Lottery Scam,0.8
+promo sweepstakes ticket number 1132,Lottery Scam,0.8
+promo sweepstakes ticket number 1133,Lottery Scam,0.8
+promo sweepstakes ticket number 1134,Lottery Scam,0.8
+promo sweepstakes ticket number 1135,Lottery Scam,0.8
+promo sweepstakes ticket number 1136,Lottery Scam,0.8
+promo sweepstakes ticket number 1137,Lottery Scam,0.8
+promo sweepstakes ticket number 1138,Lottery Scam,0.8
+promo sweepstakes ticket number 1139,Lottery Scam,0.8
+promo sweepstakes ticket number 1140,Lottery Scam,0.8
+promo sweepstakes ticket number 1141,Lottery Scam,0.8
+promo sweepstakes ticket number 1142,Lottery Scam,0.8
+promo sweepstakes ticket number 1143,Lottery Scam,0.8
+promo sweepstakes ticket number 1144,Lottery Scam,0.8
+promo sweepstakes ticket number 1145,Lottery Scam,0.8
+promo sweepstakes ticket number 1146,Lottery Scam,0.8
+promo sweepstakes ticket number 1147,Lottery Scam,0.8
+promo sweepstakes ticket number 1148,Lottery Scam,0.8
+promo sweepstakes ticket number 1149,Lottery Scam,0.8

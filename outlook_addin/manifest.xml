@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OfficeApp 
+  xmlns="http://schemas.microsoft.com/office/appshcommon/1.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
+  xsi:type="MailApp">
+  
+  <Id>9fbc456b-3ab4-4d8b-944a-d667dc9e9e14</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Antigravity</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="AI Cargo Fraud Detector"/>
+  <Description DefaultValue="Analyze email message text for cargo theft, phishing, and logistics fraud in real-time."/>
+  <IconUrl DefaultValue="http://localhost:5001/outlook_addin/icon.png"/>
+  <HighResolutionIconUrl DefaultValue="http://localhost:5001/outlook_addin/icon.png"/>
+  
+  <SupportUrl DefaultValue="http://localhost:5001/support"/>
+  
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+  
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="Mailbox" />
+    </Sets>
+  </Requirements>
+  
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="http://localhost:5001/outlook_addin/taskpane.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+      <TabletSettings>
+        <SourceLocation DefaultValue="http://localhost:5001/outlook_addin/taskpane.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </TabletSettings>
+      <PhoneSettings>
+        <SourceLocation DefaultValue="http://localhost:5001/outlook_addin/taskpane.html"/>
+      </PhoneSettings>
+    </Form>
+  </FormSettings>
+  
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+  
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+  
+</OfficeApp>

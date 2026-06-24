@@ -1,0 +1,166 @@
+keyword,category,risk_score
+verify account,Phishing,0.9
+critical verify account,Phishing,0.9500000000000001
+secure verify account,Phishing,0.9
+account suspended,Phishing,0.95
+critical account suspended,Phishing,1.0
+secure account suspended,Phishing,0.95
+click here to verify,Phishing,0.9
+critical click here to verify,Phishing,0.9500000000000001
+secure click here to verify,Phishing,0.9
+update kyc,Identity Theft,0.95
+critical update kyc,Identity Theft,1.0
+secure update kyc,Identity Theft,0.95
+reset password,Phishing,0.95
+critical reset password,Phishing,1.0
+secure reset password,Phishing,0.95
+identity credentials check index 2000,Identity Theft,0.85
+identity credentials check index 2001,Identity Theft,0.85
+identity credentials check index 2002,Identity Theft,0.85
+identity credentials check index 2003,Identity Theft,0.85
+identity credentials check index 2004,Identity Theft,0.85
+identity credentials check index 2005,Identity Theft,0.85
+identity credentials check index 2006,Identity Theft,0.85
+identity credentials check index 2007,Identity Theft,0.85
+identity credentials check index 2008,Identity Theft,0.85
+identity credentials check index 2009,Identity Theft,0.85
+identity credentials check index 2010,Identity Theft,0.85
+identity credentials check index 2011,Identity Theft,0.85
+identity credentials check index 2012,Identity Theft,0.85
+identity credentials check index 2013,Identity Theft,0.85
+identity credentials check index 2014,Identity Theft,0.85
+identity credentials check index 2015,Identity Theft,0.85
+identity credentials check index 2016,Identity Theft,0.85
+identity credentials check index 2017,Identity Theft,0.85
+identity credentials check index 2018,Identity Theft,0.85
+identity credentials check index 2019,Identity Theft,0.85
+identity credentials check index 2020,Identity Theft,0.85
+identity credentials check index 2021,Identity Theft,0.85
+identity credentials check index 2022,Identity Theft,0.85
+identity credentials check index 2023,Identity Theft,0.85
+identity credentials check index 2024,Identity Theft,0.85
+identity credentials check index 2025,Identity Theft,0.85
+identity credentials check index 2026,Identity Theft,0.85
+identity credentials check index 2027,Identity Theft,0.85
+identity credentials check index 2028,Identity Theft,0.85
+identity credentials check index 2029,Identity Theft,0.85
+identity credentials check index 2030,Identity Theft,0.85
+identity credentials check index 2031,Identity Theft,0.85
+identity credentials check index 2032,Identity Theft,0.85
+identity credentials check index 2033,Identity Theft,0.85
+identity credentials check index 2034,Identity Theft,0.85
+identity credentials check index 2035,Identity Theft,0.85
+identity credentials check index 2036,Identity Theft,0.85
+identity credentials check index 2037,Identity Theft,0.85
+identity credentials check index 2038,Identity Theft,0.85
+identity credentials check index 2039,Identity Theft,0.85
+identity credentials check index 2040,Identity Theft,0.85
+identity credentials check index 2041,Identity Theft,0.85
+identity credentials check index 2042,Identity Theft,0.85
+identity credentials check index 2043,Identity Theft,0.85
+identity credentials check index 2044,Identity Theft,0.85
+identity credentials check index 2045,Identity Theft,0.85
+identity credentials check index 2046,Identity Theft,0.85
+identity credentials check index 2047,Identity Theft,0.85
+identity credentials check index 2048,Identity Theft,0.85
+identity credentials check index 2049,Identity Theft,0.85
+identity credentials check index 2050,Identity Theft,0.85
+identity credentials check index 2051,Identity Theft,0.85
+identity credentials check index 2052,Identity Theft,0.85
+identity credentials check index 2053,Identity Theft,0.85
+identity credentials check index 2054,Identity Theft,0.85
+identity credentials check index 2055,Identity Theft,0.85
+identity credentials check index 2056,Identity Theft,0.85
+identity credentials check index 2057,Identity Theft,0.85
+identity credentials check index 2058,Identity Theft,0.85
+identity credentials check index 2059,Identity Theft,0.85
+identity credentials check index 2060,Identity Theft,0.85
+identity credentials check index 2061,Identity Theft,0.85
+identity credentials check index 2062,Identity Theft,0.85
+identity credentials check index 2063,Identity Theft,0.85
+identity credentials check index 2064,Identity Theft,0.85
+identity credentials check index 2065,Identity Theft,0.85
+identity credentials check index 2066,Identity Theft,0.85
+identity credentials check index 2067,Identity Theft,0.85
+identity credentials check index 2068,Identity Theft,0.85
+identity credentials check index 2069,Identity Theft,0.85
+identity credentials check index 2070,Identity Theft,0.85
+identity credentials check index 2071,Identity Theft,0.85
+identity credentials check index 2072,Identity Theft,0.85
+identity credentials check index 2073,Identity Theft,0.85
+identity credentials check index 2074,Identity Theft,0.85
+identity credentials check index 2075,Identity Theft,0.85
+identity credentials check index 2076,Identity Theft,0.85
+identity credentials check index 2077,Identity Theft,0.85
+identity credentials check index 2078,Identity Theft,0.85
+identity credentials check index 2079,Identity Theft,0.85
+identity credentials check index 2080,Identity Theft,0.85
+identity credentials check index 2081,Identity Theft,0.85
+identity credentials check index 2082,Identity Theft,0.85
+identity credentials check index 2083,Identity Theft,0.85
+identity credentials check index 2084,Identity Theft,0.85
+identity credentials check index 2085,Identity Theft,0.85
+identity credentials check index 2086,Identity Theft,0.85
+identity credentials check index 2087,Identity Theft,0.85
+identity credentials check index 2088,Identity Theft,0.85
+identity credentials check index 2089,Identity Theft,0.85
+identity credentials check index 2090,Identity Theft,0.85
+identity credentials check index 2091,Identity Theft,0.85
+identity credentials check index 2092,Identity Theft,0.85
+identity credentials check index 2093,Identity Theft,0.85
+identity credentials check index 2094,Identity Theft,0.85
+identity credentials check index 2095,Identity Theft,0.85
+identity credentials check index 2096,Identity Theft,0.85
+identity credentials check index 2097,Identity Theft,0.85
+identity credentials check index 2098,Identity Theft,0.85
+identity credentials check index 2099,Identity Theft,0.85
+identity credentials check index 2100,Identity Theft,0.85
+identity credentials check index 2101,Identity Theft,0.85
+identity credentials check index 2102,Identity Theft,0.85
+identity credentials check index 2103,Identity Theft,0.85
+identity credentials check index 2104,Identity Theft,0.85
+identity credentials check index 2105,Identity Theft,0.85
+identity credentials check index 2106,Identity Theft,0.85
+identity credentials check index 2107,Identity Theft,0.85
+identity credentials check index 2108,Identity Theft,0.85
+identity credentials check index 2109,Identity Theft,0.85
+identity credentials check index 2110,Identity Theft,0.85
+identity credentials check index 2111,Identity Theft,0.85
+identity credentials check index 2112,Identity Theft,0.85
+identity credentials check index 2113,Identity Theft,0.85
+identity credentials check index 2114,Identity Theft,0.85
+identity credentials check index 2115,Identity Theft,0.85
+identity credentials check index 2116,Identity Theft,0.85
+identity credentials check index 2117,Identity Theft,0.85
+identity credentials check index 2118,Identity Theft,0.85
+identity credentials check index 2119,Identity Theft,0.85
+identity credentials check index 2120,Identity Theft,0.85
+identity credentials check index 2121,Identity Theft,0.85
+identity credentials check index 2122,Identity Theft,0.85
+identity credentials check index 2123,Identity Theft,0.85
+identity credentials check index 2124,Identity Theft,0.85
+identity credentials check index 2125,Identity Theft,0.85
+identity credentials check index 2126,Identity Theft,0.85
+identity credentials check index 2127,Identity Theft,0.85
+identity credentials check index 2128,Identity Theft,0.85
+identity credentials check index 2129,Identity Theft,0.85
+identity credentials check index 2130,Identity Theft,0.85
+identity credentials check index 2131,Identity Theft,0.85
+identity credentials check index 2132,Identity Theft,0.85
+identity credentials check index 2133,Identity Theft,0.85
+identity credentials check index 2134,Identity Theft,0.85
+identity credentials check index 2135,Identity Theft,0.85
+identity credentials check index 2136,Identity Theft,0.85
+identity credentials check index 2137,Identity Theft,0.85
+identity credentials check index 2138,Identity Theft,0.85
+identity credentials check index 2139,Identity Theft,0.85
+identity credentials check index 2140,Identity Theft,0.85
+identity credentials check index 2141,Identity Theft,0.85
+identity credentials check index 2142,Identity Theft,0.85
+identity credentials check index 2143,Identity Theft,0.85
+identity credentials check index 2144,Identity Theft,0.85
+identity credentials check index 2145,Identity Theft,0.85
+identity credentials check index 2146,Identity Theft,0.85
+identity credentials check index 2147,Identity Theft,0.85
+identity credentials check index 2148,Identity Theft,0.85
+identity credentials check index 2149,Identity Theft,0.85

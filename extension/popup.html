@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Cargo Fraud Detector</title>
+    <!-- Use standard simple styling matching the main app -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 380px;
+            background-color: #f1f3f7;
+            color: #333333;
+        }
+        .header {
+            background: linear-gradient(135deg, #0040a0 0%, #002560 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 64, 160, 0.15);
+        }
+        .header h3 {
+            margin: 0 0 4px 0;
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+        .header p {
+            margin: 0;
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+        .container {
+            padding: 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+        .card h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 8px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .form-control {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 0.85rem;
+            background-color: #f8f9fa;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #0040a0;
+            box-shadow: 0 0 0 2px rgba(0, 64, 160, 0.15);
+            background-color: white;
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #0040a0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #002d72;
+        }
+        .btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .results-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .classification-container {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+        .badge-safe {
+            background-color: rgba(25, 135, 84, 0.15);
+            color: #198754;
+            border: 1px solid rgba(25, 135, 84, 0.3);
+        }
+        .badge-suspicious {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #b58100;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+        .badge-fraud {
+            background-color: rgba(220, 53, 69, 0.15);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+        .metrics-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .metric-card {
+            flex: 1;
+            background-color: #f8f9fa;
+            border: 1px solid #eeeeee;
+            border-radius: 4px;
+            padding: 8px;
+            text-align: center;
+        }
+        .metric-title {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .metric-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #222;
+        }
+        .result-details {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        .result-details h5 {
+            margin: 8px 0 4px 0;
+            font-size: 0.8rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .keyword-pill {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .list-unstyled {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .list-unstyled li {
+            padding: 3px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .check-icon {
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        .text-success { color: #198754; }
+        .text-danger { color: #dc3545; }
+        .text-primary { color: #0040a0; }
+        .placeholder-text {
+            text-align: center;
+            color: #888;
+            font-size: 0.8rem;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h3>AI Cargo Fraud Detector</h3>
+        <p>Communication Intelligence & Risk Analysis</p>
+    </div>
+
+    <div class="container">
+        <!-- Input Panel -->
+        <div class="card">
+            <h4>Analyze Communication</h4>
+            <form id="popup-form">
+                <div class="form-group">
+                    <label for="message">Message Text</label>
+                    <textarea class="form-control" id="message" placeholder="Paste highlighted email or message..." required></textarea>
+                </div>
+                <button type="submit" class="btn" id="btn-submit">Analyze Message</button>
+            </form>
+        </div>
+
+        <!-- Results Panel -->
+        <div class="card results-section" id="results-card">
+            <h4>Results Section</h4>
+            
+            <div class="classification-container">
+                <span class="badge" id="res-classification">SAFE</span>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric-card">
+                    <div class="metric-title">Confidence</div>
+                    <div class="metric-val" id="res-confidence">0%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">Risk Score</div>
+                    <div class="metric-val" id="res-risk-score">0</div>
+                </div>
+            </div>
+
+            <div class="result-details">
+                <h5>Detected Keywords</h5>
+                <div id="res-keywords">
+                    <!-- Dynamic -->
+                </div>
+
+                <h5>Reasons</h5>
+                <ul class="list-unstyled" id="res-reasons">
+                    <!-- Dynamic -->
+                </ul>
+
+                <h5>Recommendation</h5>
+                <ul class="list-unstyled" id="res-recommendation">
+                    <!-- Dynamic -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Placeholder when no result is loaded -->
+        <div id="no-results-placeholder" class="placeholder-text">
+            No recent analyses. Highlight page text and right-click "Analyze Fraud", or paste text above and hit Analyze.
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

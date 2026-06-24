@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "AI Cargo Fraud Detector",
+  "version": "1.0",
+  "description": "Detects cargo theft, phishing, and logistics fraud in emails and web portals.",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:5001/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
